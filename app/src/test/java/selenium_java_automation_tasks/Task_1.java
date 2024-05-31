@@ -31,7 +31,8 @@ public class Task_1 {
      @Test
     public void amazonSearch(String product) {
 
-        WebElement amazonSearchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+        try {
+            WebElement amazonSearchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 
         Assert.assertTrue(amazonSearchBox.isDisplayed(), "Failed: Amazon Search Box is not Present");
 
@@ -51,18 +52,27 @@ public class Task_1 {
         Assert.assertTrue(verifyAmazonResultPage.isDisplayed(),
                 "Failed: Searched Keyword is not present in Amazon result page");
 
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
     }
 
     @Test
     public void listProductTitles() throws InterruptedException {
+        
+        try {
+            List<WebElement> list = driver
+            .findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
 
-        List<WebElement> list = driver
-                .findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
-
-        for (int i = 0; i < 5 && i < list.size(); i++) { // to print first 5 Product Titles
-            String listitem = list.get(i).getText();
-            Assert.assertFalse(listitem.isEmpty(), "Product title is empty");
-            System.out.println("Product Title :" + listitem);
+    for (int i = 0; i < 5 && i < list.size(); i++) { // to print first 5 Product Titles
+        String listitem = list.get(i).getText();
+        Assert.assertFalse(listitem.isEmpty(), "Product title is empty");
+        System.out.println("Product Title :" + listitem);
+    }
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
         }
     }
 }

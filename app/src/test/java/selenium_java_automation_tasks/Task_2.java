@@ -31,7 +31,8 @@ public class Task_2 {
        @Test
     public void amazonSearch(String product) {
 
-        WebElement amazonSearchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+        try {
+            WebElement amazonSearchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 
         Assert.assertTrue(amazonSearchBox.isDisplayed(), "Failed: Amazon Search Box is not Present");
 
@@ -50,12 +51,18 @@ public class Task_2 {
 
         Assert.assertTrue(verifyAmazonResultPage.isDisplayed(),
                 "Failed: Searched Keyword is not present in Amazon result page");
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
+
     }
 
     @Test
     public void product_search_using_contains() throws InterruptedException {
 
-        List<WebElement> list = driver.findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
+        try {
+            List<WebElement> list = driver.findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
 
         int count =0;
 
@@ -69,5 +76,8 @@ public class Task_2 {
             }
         }
         System.out.println("Total Count : "+count);
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 }

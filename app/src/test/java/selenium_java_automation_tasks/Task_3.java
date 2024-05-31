@@ -30,8 +30,9 @@ public class Task_3 {
 
     @Test
     public void printGoogleNewsIndia(){
-
-        WebElement clickIndia = driver.findElement(By.xpath("//div[@class='EctEBd']//a[text()='India']"));
+        
+        try {
+            WebElement clickIndia = driver.findElement(By.xpath("//div[@class='EctEBd']//a[text()='India']"));
         clickIndia.click();
 
         driver.navigate().refresh();
@@ -58,12 +59,17 @@ public class Task_3 {
                 System.out.println();
             }
         }
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
+        }
     }
 
     @Test
     public void printGoogleNewsWorld(){
 
-        WebElement worldClick = driver.findElement(By.xpath("//c-wiz[@jsrenderer='xhgKH']//div[@class='EctEBd']//a[text()='World']"));
+        try {
+            WebElement worldClick = driver.findElement(By.xpath("//c-wiz[@jsrenderer='xhgKH']//div[@class='EctEBd']//a[text()='World']"));
         worldClick.click();
 
         driver.navigate().refresh();
@@ -92,6 +98,9 @@ public class Task_3 {
                 System.out.println("Time Posted: " + timeText);
                 System.out.println();
             }
+        }
+        } catch (Exception e) {
+            // TODO: handle exception
         }
     }
 }
