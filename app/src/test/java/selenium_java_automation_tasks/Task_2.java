@@ -35,12 +35,12 @@ public class Task_2 {
 
         Assert.assertTrue(amazonSearchBox.isDisplayed(), "Failed: Amazon Search Box is not Present");
 
-        SeleniumWrapper.clickAction(amazonSearchBox, driver);
+        amazonSearchBox.click();
 
-        SeleniumWrapper.enterText(amazonSearchBox, product);
+        amazonSearchBox.sendKeys(product);
 
         WebElement amazonSearchbtn = driver.findElement(By.id("nav-search-submit-button"));
-        SeleniumWrapper.clickAction(amazonSearchbtn, driver);
+        amazonSearchbtn.click();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(

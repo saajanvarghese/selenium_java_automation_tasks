@@ -32,7 +32,7 @@ class AppTest {
         driver.quit();
     }
 
-    
+    @Test   
     public static void Task_1_List_ProductTitles() throws InterruptedException{
 
         Task_1 task_1 = new Task_1(driver);
@@ -44,7 +44,7 @@ class AppTest {
         task_1.listProductTitles();
     }
 
-    
+    @Test
     public static void Task_2_product_search_using_contains() throws InterruptedException{
 
         Task_2 task_2 = new Task_2(driver);
@@ -56,7 +56,6 @@ class AppTest {
         task_2.product_search_using_contains();
     }
 
-
     @Test
     public static void Task_3_print_GoogleNews_Headlines() throws InterruptedException{
 
@@ -66,7 +65,6 @@ class AppTest {
 
         task_3.printGoogleNewsIndia();
 
-        task_3.printGoogleNewsWorld();
-        
+        task_3.printGoogleNewsWorld();        
     }
 }
