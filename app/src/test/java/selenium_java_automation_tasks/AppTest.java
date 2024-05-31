@@ -67,4 +67,16 @@ class AppTest {
 
         task_3.printGoogleNewsWorld();        
     }
+
+    @Test
+    public static void Task_4_print_weekends_of_the_month() throws InterruptedException{
+
+        Task_4 task_4 = new Task_4(driver);
+
+        task_4.navigateWebPage();
+
+        task_4.printWeekendsofthemonth();
+
+        task_4.selectCurrentDate();
+    }
 }

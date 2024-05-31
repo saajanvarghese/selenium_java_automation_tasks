@@ -1,23 +1,23 @@
 # Selenium Java Automation Tasks
 
-# Description
+# Description:
 This repository is created to upload Selenium Automation Tasks using Java.
 
-# Task 01 Description
+# Task 01 Description:
 - Go to "https://www.amazon.in/".
 
 - Search for mobiles in the search Box.
 
 - Display First 5 Mobile Product Titles in the search results page.
 
-# Task 02 Description
+# Task 02 Description:
 - Go to "https://www.amazon.in/".
 
 - Search for iphone in the search Box.
 
 - Display IPhone products which contains 128GB in the search results page.
 
-# Task 03 Description
+# Task 03 Description:
 - Go to "https://www.news.google.com/".
 
 - Click on "India" Tab.
@@ -27,6 +27,13 @@ This repository is created to upload Selenium Automation Tasks using Java.
 - Click on "World" Tab.
 
 - Display News of first 5 sections.
+
+# Task 04 Description:
+- Go to "https://jqueryui.com/datepicker/".
+
+- Print current month WeekEnd Dates.
+
+- Print the Current Date in format DD-MMMMM-YYYY.
 
 # Note on This Selenium Java Automation Tasks
 1. Added TestNG
