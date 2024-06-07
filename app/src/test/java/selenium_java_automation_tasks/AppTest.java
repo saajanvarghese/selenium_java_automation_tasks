@@ -1,14 +1,10 @@
 package selenium_java_automation_tasks;
 
-import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -78,5 +74,14 @@ class AppTest {
         task_4.printWeekendsofthemonth();
 
         task_4.selectCurrentDate();
+    }
+
+    @Test
+    public static void Task_5_print_values_from_Wikipedia() throws InterruptedException{
+        Task_5 task_5 = new Task_5(driver);
+
+        task_5.navigateToWikipediaPage();
+
+        task_5.printFoundersList();
     }
 }

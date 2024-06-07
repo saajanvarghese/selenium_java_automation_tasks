@@ -35,9 +35,17 @@ This repository is created to upload Selenium Automation Tasks using Java.
 
 - Print the Current Date in format DD-MMMMM-YYYY.
 
+# Task 05 Description:
+- Go to "https://www.wikipedia.org/".
+
+- Search for "Apple Inc.".
+
+- Print the founders list.
+
 # Note on This Selenium Java Automation Tasks
 1. Added TestNG
 2. Implemented Assert statements
+3. Implemented WebDriverWait (explicit waits).
 
 ## Required Software to Install:
 ```
