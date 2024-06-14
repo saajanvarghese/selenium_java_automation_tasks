@@ -42,6 +42,19 @@ This repository is created to upload Selenium Automation Tasks using Java.
 
 - Print the founders list.
 
+# Task 06 Description:
+- Go to "https://www.flipkart.com/".
+
+- Search for "Google Pixel 7a".
+
+- Count Total Products and Display the count.
+
+- Sort by Popularity.
+
+- Add Product to Cart.
+
+- Calculate Total Amount calculated using Java Code and verify the Total Amount using Assert Statements.
+
 # Note on This Selenium Java Automation Tasks
 1. Added TestNG
 2. Implemented Assert statements
@@ -61,7 +74,7 @@ git --version
 gradle --version
 ```
 ```
-# vscode 1.89.1
+# vscode 1.90.0
 code --version
 ```
 ## Required Dependency to run:

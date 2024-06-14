@@ -84,4 +84,22 @@ class AppTest {
 
         task_5.printFoundersList();
     }
+
+    @Test
+    public static void Task_6_FlipKartTask_Calculate_Total_Amount() {
+
+            Task_6 task_6 = new Task_6(driver);
+
+            task_6.navigateToFlipkart();
+
+            task_6.searchProduct("google pixel 7a");
+
+            task_6.countProducts();
+
+            task_6.SortBy("Popularity");
+
+            task_6.addProductToCart();
+
+            task_6.calculateProductAmount();
+    }
 }

@@ -11,8 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 public class Task_5 {
-
-    
+   
       WebDriver driver;
 
     public Task_5(WebDriver driver) {
