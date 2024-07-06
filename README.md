@@ -53,7 +53,22 @@ This repository is created to upload Selenium Automation Tasks using Java.
 
 - Add Product to Cart.
 
-- Calculate Total Amount calculated using Java Code and verify the Total Amount using Assert Statements.
+- Calculate Total Amount calculated using Java Code and verify the Total Amount using Assert statements.
+
+# Task 07 Description:
+- Go to "https://www.amazon.in/".
+
+- Search for "Samsung Galaxy S24 Ultra 5G AI Smartphone (Titanium Black, 12GB, 256GB Storage)".
+
+- Add Product to Cart along with "Samsung Galaxy S24 Ultra 5G Clear Case, Transparent" product.
+
+- Search for "Samsung Original 45W Power Adapter with Type C to C Cable, Compatible with Smartphone, Black".
+
+- Add Product to Cart.
+
+- Remove "Samsung Galaxy S23 Ultra 5G (Green, 12GB, 256GB Storage)" product from the Shopping Cart.
+
+- Calculate Total Amount of the products in Shopping Cart and verify if the calculated Total Amount using Assert statements.
 
 # Note on This Selenium Java Automation Tasks
 1. Added TestNG
@@ -74,7 +89,7 @@ git --version
 gradle --version
 ```
 ```
-# vscode 1.90.0
+# vscode 1.91.0
 code --version
 ```
 ## Required Dependency to run:
