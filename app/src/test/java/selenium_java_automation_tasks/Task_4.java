@@ -15,13 +15,13 @@ import org.testng.annotations.Test;
 
 public class Task_4 {
 
-      WebDriver driver;
+    WebDriver driver;
 
     public Task_4(WebDriver driver) {
         this.driver = driver;
     }
 
-    public Boolean navigateWebPage(){
+    public Boolean navigateWebPage() {
 
         String url = "https://jqueryui.com/datepicker/";
 
@@ -32,53 +32,53 @@ public class Task_4 {
     }
 
     @Test
-    public void printWeekendsofthemonth(){
+    public void printWeekendsofthemonth() {
 
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='demo-frame']")));
-        
-        WebElement iframe = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
-        driver.switchTo().frame(iframe);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='demo-frame']")));
 
-        WebDriverWait date_picker_wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        date_picker_wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='hasDatepicker']")));
+            WebElement iframe = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
+            driver.switchTo().frame(iframe);
 
-        WebElement date_picker = driver.findElement(By.xpath("//input[@class='hasDatepicker']"));
-        date_picker.click();
+            WebDriverWait date_picker_wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            date_picker_wait
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@class='hasDatepicker']")));
 
-        List<WebElement> dates = driver.findElements(By.className("ui-datepicker-week-end"));
+            WebElement date_picker = driver.findElement(By.xpath("//input[@class='hasDatepicker']"));
+            date_picker.click();
 
-        int getdates =dates.size()-1;
+            List<WebElement> dates = driver.findElements(By.className("ui-datepicker-week-end"));
 
-        for(int i =3; i<=getdates;){
+            int getdates = dates.size() - 1;
 
-            if(i%2==0){
-                WebElement Sunday = driver.findElement(By.xpath("//table[@class='ui-datepicker-calendar']//th[1]"));
-                String getSundaytxt = Sunday.getText();
-                System.out.println(getSundaytxt+" : "+dates.get(i).getText());  
-                i++;
+            for (int i = 3; i <= getdates;) {
+
+                if (i % 2 == 0) {
+                    WebElement Sunday = driver.findElement(By.xpath("//table[@class='ui-datepicker-calendar']//th[1]"));
+                    String getSundaytxt = Sunday.getText();
+                    System.out.println(getSundaytxt + " : " + dates.get(i).getText());
+                    i++;
+                } else if (i % 2 != 0) {
+                    WebElement Saturday = driver
+                            .findElement(By.xpath("//table[@class='ui-datepicker-calendar']//th[7]"));
+                    String getSaturdaytxt = Saturday.getText();
+                    System.out.println(getSaturdaytxt + " : " + dates.get(i).getText());
+                    i++;
+                } else {
+                    System.out.println("Invalid Dates");
+                }
             }
-            else if(i%2!=0){
-                WebElement Saturday = driver.findElement(By.xpath("//table[@class='ui-datepicker-calendar']//th[7]"));
-                String getSaturdaytxt = Saturday.getText();
-                System.out.println(getSaturdaytxt+" : "+dates.get(i).getText());
-                i++;
-            }
-            else{
-                System.out.println("Invalid Dates");
-            }
-        }
-        driver.switchTo().defaultContent();
+            driver.switchTo().defaultContent();
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
         }
-    }  
+    }
 
     @Test
     public void selectCurrentDate() {
-        
+
         try {
             WebElement iframe = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
             driver.switchTo().frame(iframe);
@@ -87,36 +87,39 @@ public class Task_4 {
             DateTimeFormatter dayFormatter = DateTimeFormatter.ofPattern("d");
             DateTimeFormatter monthFormatter = DateTimeFormatter.ofPattern("MMMM");
             DateTimeFormatter yearFormatter = DateTimeFormatter.ofPattern("yyyy");
-    
+
             String day = currentDate.format(dayFormatter);
             String month = currentDate.format(monthFormatter);
             String year = currentDate.format(yearFormatter);
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui-datepicker-title']//span[text()='" + month + "']")));
-                
+            wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//div[@class='ui-datepicker-title']//span[text()='" + month + "']")));
+
             WebElement monthElement = driver
                     .findElement(By.xpath("//div[@class='ui-datepicker-title']//span[text()='" + month + "']"));
             String monthtext = monthElement.getText();
             Assert.assertEquals(monthtext, month);
 
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='ui-datepicker-title']//span[text()='" + year + "']")));
-    
+            wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//div[@class='ui-datepicker-title']//span[text()='" + year + "']")));
+
             WebElement yearElement = driver
                     .findElement(By.xpath("//div[@class='ui-datepicker-title']//span[text()='" + year + "']"));
             String yearText = yearElement.getText();
             Assert.assertEquals(yearText, year);
 
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td[@data-handler='selectDay']//a[text()='" + day + "']")));
-    
+            wait.until(ExpectedConditions
+                    .visibilityOfElementLocated(By.xpath("//td[@data-handler='selectDay']//a[text()='" + day + "']")));
+
             WebElement dayElement = driver
                     .findElement(By.xpath("//td[@data-handler='selectDay']//a[text()='" + day + "']"));
             String dayText = dayElement.getText();
             Assert.assertEquals(dayText, day);
-    
+
             dayElement.click();
-      
-            System.out.println("Date: "+day+" "+month+" "+year);
+
+            System.out.println("Date: " + day + " " + month + " " + year);
 
             driver.switchTo().defaultContent();
         } catch (Exception e) {

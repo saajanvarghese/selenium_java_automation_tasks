@@ -18,7 +18,7 @@ public class Task_3 {
         this.driver = driver;
     }
 
-    public Boolean navigateToGoogleNews(){
+    public Boolean navigateToGoogleNews() {
 
         String url = "https://news.google.com/home?hl=en-IN&gl=IN&ceid=IN:en";
 
@@ -29,36 +29,36 @@ public class Task_3 {
     }
 
     @Test
-    public void printGoogleNewsIndia(){
-        
+    public void printGoogleNewsIndia() {
+
         try {
             WebElement clickIndia = driver.findElement(By.xpath("//div[@class='EctEBd']//a[text()='India']"));
-        clickIndia.click();
+            clickIndia.click();
 
-        driver.navigate().refresh();
+            driver.navigate().refresh();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='IbUd0d']//h1")));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='IbUd0d']//h1")));
 
-        System.out.println("News From India");
+            System.out.println("News From India");
 
-        List<WebElement> sourceChannels = driver.findElements(
-                By.xpath("//div[@class='f9uzM']//div[@class='MCAGUe']//div[@class='a7P8l']//div[@class='vr1PYe']"));
-        List<WebElement> headlines = driver.findElements(By.xpath("//article[@class='UwIKyb']//a[@class='gPFEn']"));
-        List<WebElement> time = driver.findElements(By.xpath("//div[@class='UOVeFe Jjkwtf']//time"));
+            List<WebElement> sourceChannels = driver.findElements(
+                    By.xpath("//div[@class='f9uzM']//div[@class='MCAGUe']//div[@class='a7P8l']//div[@class='vr1PYe']"));
+            List<WebElement> headlines = driver.findElements(By.xpath("//article[@class='UwIKyb']//a[@class='gPFEn']"));
+            List<WebElement> time = driver.findElements(By.xpath("//div[@class='UOVeFe Jjkwtf']//time"));
 
-        for (int i = 0; i < 15 && i < sourceChannels.size() && i < headlines.size() && i < time.size(); i++) {
-            String sourceChannelText = sourceChannels.get(i).getText();
-            String headlineText = headlines.get(i).getText();
-            String timeText = time.get(i).getText();
+            for (int i = 0; i < 15 && i < sourceChannels.size() && i < headlines.size() && i < time.size(); i++) {
+                String sourceChannelText = sourceChannels.get(i).getText();
+                String headlineText = headlines.get(i).getText();
+                String timeText = time.get(i).getText();
 
-            if (!sourceChannelText.isEmpty() && !headlineText.isEmpty() && !timeText.isEmpty()) {
-                System.out.println("Channel/Newspaper/Article: " + sourceChannelText);
-                System.out.println("Headline: " + headlineText);
-                System.out.println("Time Posted: " + timeText);
-                System.out.println();
+                if (!sourceChannelText.isEmpty() && !headlineText.isEmpty() && !timeText.isEmpty()) {
+                    System.out.println("Channel/Newspaper/Article: " + sourceChannelText);
+                    System.out.println("Headline: " + headlineText);
+                    System.out.println("Time Posted: " + timeText);
+                    System.out.println();
+                }
             }
-        }
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
@@ -66,39 +66,43 @@ public class Task_3 {
     }
 
     @Test
-    public void printGoogleNewsWorld(){
+    public void printGoogleNewsWorld() {
 
         try {
-            WebElement worldClick = driver.findElement(By.xpath("//c-wiz[@jsrenderer='xhgKH']//div[@class='EctEBd']//a[text()='World']"));
-        worldClick.click();
+            WebElement worldClick = driver
+                    .findElement(By.xpath("//c-wiz[@jsrenderer='xhgKH']//div[@class='EctEBd']//a[text()='World']"));
+            worldClick.click();
 
-        driver.navigate().refresh();
+            driver.navigate().refresh();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='IbUd0d']//h1")));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='IbUd0d']//h1")));
 
-        System.out.println("News from World");
+            System.out.println("News from World");
 
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//article[@class='UwIKyb']//div[@class='MCAGUe']//div[@class='a7P8l']//div[@class='vr1PYe']")));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(
+                    "//article[@class='UwIKyb']//div[@class='MCAGUe']//div[@class='a7P8l']//div[@class='vr1PYe']")));
 
-        List<WebElement> sourceChannels = driver.findElements(
-                By.xpath("//article[@class='UwIKyb']//div[@class='MCAGUe']//div[@class='a7P8l']//div[@class='vr1PYe']"));
-        List<WebElement> headlines = driver.findElements(By.xpath("//article[@class='UwIKyb']//a[@class='gPFEn']"));
-        List<WebElement> time = driver.findElements(By.xpath("//article[@class='UwIKyb']//div[@class='UOVeFe Jjkwtf']//time"));
+            List<WebElement> sourceChannels = driver.findElements(
+                    By.xpath(
+                            "//article[@class='UwIKyb']//div[@class='MCAGUe']//div[@class='a7P8l']//div[@class='vr1PYe']"));
+            List<WebElement> headlines = driver.findElements(By.xpath("//article[@class='UwIKyb']//a[@class='gPFEn']"));
+            List<WebElement> time = driver
+                    .findElements(By.xpath("//article[@class='UwIKyb']//div[@class='UOVeFe Jjkwtf']//time"));
 
-        for (int i = 0; i < 15 && i < sourceChannels.size() && i < headlines.size() && i < time.size(); i++) {
-            String sourceChannelText = sourceChannels.get(i).getText();
-            String headlineText = headlines.get(i).getText();
-            String timeText = time.get(i).getText();
+            for (int i = 0; i < 15 && i < sourceChannels.size() && i < headlines.size() && i < time.size(); i++) {
+                String sourceChannelText = sourceChannels.get(i).getText();
+                String headlineText = headlines.get(i).getText();
+                String timeText = time.get(i).getText();
 
-            if (!sourceChannelText.isEmpty() && !headlineText.isEmpty() && !timeText.isEmpty()) {
-                System.out.println("Channel/Newspaper/Article: " + sourceChannelText);
-                System.out.println("Headline: " + headlineText);
-                System.out.println("Time Posted: " + timeText);
-                System.out.println();
+                if (!sourceChannelText.isEmpty() && !headlineText.isEmpty() && !timeText.isEmpty()) {
+                    System.out.println("Channel/Newspaper/Article: " + sourceChannelText);
+                    System.out.println("Headline: " + headlineText);
+                    System.out.println("Time Posted: " + timeText);
+                    System.out.println();
+                }
             }
-        }
         } catch (Exception e) {
             // TODO: handle exception
         }

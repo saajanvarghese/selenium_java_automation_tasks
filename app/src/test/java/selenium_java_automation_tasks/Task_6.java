@@ -16,49 +16,48 @@ public class Task_6 {
 
     WebDriver driver;
 
-    public Task_6(WebDriver driver){
+    public Task_6(WebDriver driver) {
         this.driver = driver;
     }
 
-    public Boolean navigateToFlipkart(){
+    public Boolean navigateToFlipkart() {
         String url = "https://www.flipkart.com/";
 
-        if(!driver.getCurrentUrl().equals(url)){
+        if (!driver.getCurrentUrl().equals(url)) {
             driver.get(url);
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
 
     @Test
-    public Boolean searchProduct(String productName){
+    public Boolean searchProduct(String productName) {
         try {
 
             WebDriverWait searchBoxwait = new WebDriverWait(driver, Duration.ofSeconds(30));
             searchBoxwait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='q']")));
 
-            WebElement searchBoxClick = driver.findElement(By.xpath("//input[@name='q']")); 
-        searchBoxClick.click();
+            WebElement searchBoxClick = driver.findElement(By.xpath("//input[@name='q']"));
+            searchBoxClick.click();
 
-        searchBoxClick.clear();
+            searchBoxClick.clear();
 
-        searchBoxClick.sendKeys(productName);
+            searchBoxClick.sendKeys(productName);
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='_2iLD__']")));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='_2iLD__']")));
 
-        WebElement searchClick = driver.findElement(By.xpath("//button[@class='_2iLD__']"));
-        searchClick.click();
+            WebElement searchClick = driver.findElement(By.xpath("//button[@class='_2iLD__']"));
+            searchClick.click();
 
-        WebElement verifyProduct = driver.findElement(By.xpath("//span[@class='BUOuZu']//span"));
+            WebElement verifyProduct = driver.findElement(By.xpath("//span[@class='BUOuZu']//span"));
 
-        String verifyProductText = verifyProduct.getText();
+            String verifyProductText = verifyProduct.getText();
 
-        Assert.assertEquals(verifyProductText, productName);
+            Assert.assertEquals(verifyProductText, productName);
 
-        return true;
+            return true;
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
@@ -67,16 +66,16 @@ public class Task_6 {
     }
 
     @Test
-    public int countProducts(){
+    public int countProducts() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='_75nlfW']")));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='_75nlfW']")));
 
             List<WebElement> productList = driver.findElements(By.xpath("//div[@class='_75nlfW']"));
 
             int productCount = productList.size();
 
-            System.out.println("Product Count : "+productList.size());
+            System.out.println("Product Count : " + productList.size());
 
             return productCount;
 
@@ -84,8 +83,8 @@ public class Task_6 {
             // TODO: handle exception
             e.printStackTrace();
         }
-        return 0;  //if productCount is 0.
-    }   
+        return 0; // if productCount is 0.
+    }
 
     @Test
     public void SortBy(String sort) {
@@ -101,13 +100,14 @@ public class Task_6 {
     }
 
     @Test
-        public void addProductToCart(){
-            try {
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-                wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//div[@class='col col-7-12']/child::div[@class='KzDlHZ'])[1]")));
+    public void addProductToCart() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(ExpectedConditions.presenceOfElementLocated(
+                    By.xpath("(//div[@class='col col-7-12']/child::div[@class='KzDlHZ'])[1]")));
 
-                
-                WebElement clickProduct = driver.findElement(By.xpath("(//div[@class='col col-7-12']/child::div[@class='KzDlHZ'])[1]"));
+            WebElement clickProduct = driver
+                    .findElement(By.xpath("(//div[@class='col col-7-12']/child::div[@class='KzDlHZ'])[1]"));
             clickProduct.click();
 
             String originalWindow = driver.getWindowHandle();
@@ -128,58 +128,58 @@ public class Task_6 {
 
             WebElement addToCartbtn = driver.findElement(By.cssSelector(".QqFHMw.vslbG\\+.In9uk2"));
             addToCartbtn.click();
-            } catch (Exception e) {
-                // TODO: handle exception
-                e.printStackTrace();
-            }            
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
         }
-        
-        @Test
-        public void calculateProductAmount(){
+    }
 
-            try {
-                String priceText = "";
-                String discountText = "";
-                String totalAmountText = "";
+    @Test
+    public void calculateProductAmount() {
 
-                WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-                wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='b5rp0W'])[1]")));
+        try {
+            String priceText = "";
+            String discountText = "";
+            String totalAmountText = "";
 
-                WebElement priceElement = driver.findElement(By.xpath("(//span[@class='b5rp0W'])[1]"));
-                String price = priceElement.getText().trim();
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='b5rp0W'])[1]")));
 
-                priceText = price.replaceAll("[^0-9,]", "").trim();
+            WebElement priceElement = driver.findElement(By.xpath("(//span[@class='b5rp0W'])[1]"));
+            String price = priceElement.getText().trim();
 
-                priceText = priceText.replace(",", "");
+            priceText = price.replaceAll("[^0-9,]", "").trim();
 
-                WebElement discounElement = driver.findElement(By.xpath("(//span[@class='_6HMXbu'])[1]"));
-                String discount = discounElement.getText().trim();
+            priceText = priceText.replace(",", "");
 
-                discountText = discount.replaceAll("[^0-9,]", "").trim();
+            WebElement discounElement = driver.findElement(By.xpath("(//span[@class='_6HMXbu'])[1]"));
+            String discount = discounElement.getText().trim();
 
-                discountText = discountText.replace(",", "");
+            discountText = discount.replaceAll("[^0-9,]", "").trim();
 
-                int priceAmt = Integer.parseInt(priceText);
-                int discountAmt = Integer.parseInt(discountText);
+            discountText = discountText.replace(",", "");
 
-                int result = priceAmt - discountAmt;
+            int priceAmt = Integer.parseInt(priceText);
+            int discountAmt = Integer.parseInt(discountText);
 
-                WebElement totalAmountElement = driver.findElement(By.xpath("(//div[@class='_1Y9Lgu']//span)[2]"));
-                String totalAmount = totalAmountElement.getText();
+            int result = priceAmt - discountAmt;
 
-                totalAmountText = totalAmount.replaceAll("[^0-9,]", "").trim();
+            WebElement totalAmountElement = driver.findElement(By.xpath("(//div[@class='_1Y9Lgu']//span)[2]"));
+            String totalAmount = totalAmountElement.getText();
 
-                totalAmountText = totalAmountText.replace(",", "");
+            totalAmountText = totalAmount.replaceAll("[^0-9,]", "").trim();
 
-                int totalAmt = Integer.parseInt(totalAmountText);
+            totalAmountText = totalAmountText.replace(",", "");
 
-                Assert.assertEquals(result, totalAmt);
+            int totalAmt = Integer.parseInt(totalAmountText);
 
-                System.out.println("Total Amount: "+totalAmt);
+            Assert.assertEquals(result, totalAmt);
 
-            } catch (Exception e) {
-                // TODO: handle exception
-                e.printStackTrace();
-            }
+            System.out.println("Total Amount: " + totalAmt);
+
+        } catch (Exception e) {
+            // TODO: handle exception
+            e.printStackTrace();
         }
+    }
 }

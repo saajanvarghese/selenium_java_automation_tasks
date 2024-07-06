@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SampleSuite">
+<test name ="SampleTest">
+<classes>
+<class name="selenium_java_automation_tasks.AppTest"/>
+</classes>
+</test>
+</suite>

@@ -41,7 +41,7 @@ test {
 
 application {
     // Define the main class for the application.
-    mainClass = 'selenium_java_automation_tasks.AppTest'
+    mainClass = 'selenium_java_automation_tasks.AmazonAppTest'
 }
 
 

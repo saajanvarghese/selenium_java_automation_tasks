@@ -12,13 +12,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Task_1 {
-     WebDriver driver;
+    WebDriver driver;
 
     public Task_1(WebDriver driver) {
         this.driver = driver;
     }
 
-    public Boolean navigateToAmazonPage(){
+    public Boolean navigateToAmazonPage() {
 
         String url = "https://www.amazon.in/";
 
@@ -28,29 +28,31 @@ public class Task_1 {
         return false;
     }
 
-     @Test
+    @Test
     public void amazonSearch(String product) {
 
         try {
             WebElement amazonSearchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
 
-        Assert.assertTrue(amazonSearchBox.isDisplayed(), "Failed: Amazon Search Box is not Present");
+            Assert.assertTrue(amazonSearchBox.isDisplayed(), "Failed: Amazon Search Box is not Present");
 
-        amazonSearchBox.click();
+            amazonSearchBox.click();
 
-        amazonSearchBox.sendKeys(product);
+            amazonSearchBox.sendKeys(product);
 
-        WebElement amazonSearchbtn = driver.findElement(By.id("nav-search-submit-button"));
-        amazonSearchbtn.click();
+            WebElement amazonSearchbtn = driver.findElement(By.id("nav-search-submit-button"));
+            amazonSearchbtn.click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(
-                ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='a-color-state a-text-bold']")));
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            wait.until(
+                    ExpectedConditions
+                            .visibilityOfElementLocated(By.xpath("//span[@class='a-color-state a-text-bold']")));
 
-        WebElement verifyAmazonResultPage = driver.findElement(By.xpath("//span[@class='a-color-state a-text-bold']"));
+            WebElement verifyAmazonResultPage = driver
+                    .findElement(By.xpath("//span[@class='a-color-state a-text-bold']"));
 
-        Assert.assertTrue(verifyAmazonResultPage.isDisplayed(),
-                "Failed: Searched Keyword is not present in Amazon result page");
+            Assert.assertTrue(verifyAmazonResultPage.isDisplayed(),
+                    "Failed: Searched Keyword is not present in Amazon result page");
 
         } catch (Exception e) {
             // TODO: handle exception
@@ -60,16 +62,16 @@ public class Task_1 {
 
     @Test
     public void listProductTitles() throws InterruptedException {
-        
+
         try {
             List<WebElement> list = driver
-            .findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
+                    .findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
 
-    for (int i = 0; i < 5 && i < list.size(); i++) { // to print first 5 Product Titles
-        String listitem = list.get(i).getText();
-        Assert.assertFalse(listitem.isEmpty(), "Product title is empty");
-        System.out.println("Product Title :" + listitem);
-    }
+            for (int i = 0; i < 5 && i < list.size(); i++) { // to print first 5 Product Titles
+                String listitem = list.get(i).getText();
+                Assert.assertFalse(listitem.isEmpty(), "Product title is empty");
+                System.out.println("Product Title :" + listitem);
+            }
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
