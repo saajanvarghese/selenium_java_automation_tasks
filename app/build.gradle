@@ -21,7 +21,7 @@ dependencies {
 implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.8.0'
 
 // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.21.0'
+implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.22.0'
 
 // https://mvnrepository.com/artifact/org.testng/testng
 testImplementation group: 'org.testng', name: 'testng', version: '7.10.2'
