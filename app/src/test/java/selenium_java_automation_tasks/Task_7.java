@@ -2,7 +2,6 @@ package selenium_java_automation_tasks;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.openqa.selenium.By;

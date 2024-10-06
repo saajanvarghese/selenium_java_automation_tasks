@@ -1,8 +1,6 @@
 package selenium_java_automation_tasks;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.annotations.Test;
@@ -25,7 +23,7 @@ class AppTest {
         driver.quit();
     }
 
-    @Test
+   // @Test
     public static void Task_1_List_ProductTitles() throws InterruptedException {
 
         Task_1 task_1 = new Task_1(driver);
@@ -37,7 +35,7 @@ class AppTest {
         task_1.listProductTitles();
     }
 
-    @Test
+    //@Test
     public static void Task_2_product_search_using_contains() throws InterruptedException {
 
         Task_2 task_2 = new Task_2(driver);
@@ -49,7 +47,7 @@ class AppTest {
         task_2.product_search_using_contains();
     }
 
-    @Test
+    //@Test
     public static void Task_3_print_GoogleNews_Headlines() throws InterruptedException {
 
         Task_3 task_3 = new Task_3(driver);
@@ -61,7 +59,7 @@ class AppTest {
         task_3.printGoogleNewsWorld();
     }
 
-    @Test
+    //@Test
     public static void Task_4_print_weekends_of_the_month() throws InterruptedException {
 
         Task_4 task_4 = new Task_4(driver);
@@ -73,7 +71,7 @@ class AppTest {
         task_4.selectCurrentDate();
     }
 
-    @Test
+    //@Test
     public static void Task_5_print_values_from_Wikipedia() throws InterruptedException {
         Task_5 task_5 = new Task_5(driver);
 
@@ -82,7 +80,7 @@ class AppTest {
         task_5.printFoundersList();
     }
 
-    @Test
+    //@Test
     public static void Task_6_FlipKartTask_Calculate_Total_Amount() {
 
         Task_6 task_6 = new Task_6(driver);
@@ -100,7 +98,7 @@ class AppTest {
         task_6.calculateProductAmount();
     }
 
-    @Test
+    //@Test
     public static void Task_7_Amazon_Product_Calculate_Total_Amount() {
 
         Task_7 task_7 = new Task_7(driver);
@@ -115,5 +113,19 @@ class AppTest {
                 "Samsung Original 45W Power Adapter with Type C to C Cable, Compatible with Smartphone, Black");
 
         task_7.CalculateTotalAmount();
+    }
+
+    @Test
+    public static void Task_8_Check_RAM_SSD_in_Google_and_Amazon(){
+
+        Task_8 task_8 = new Task_8(driver);
+
+        task_8.navigateToGoogle();
+
+        task_8.searchCrucialRAM_in_Google("Crucial 16GB DDR4-2400 SODIMM");
+
+        task_8.search_Western_Digital_SSD_Drive_in_Google("1TB QLC WD Green SN350 NVMe™ SSD");
+
+        task_8.searchinAmazon("Crucial CT16G4SFD824A 16GB 2400MHz 260-Pin SODIMM Laptop Memory (CT16G4SFD824A)","Western Digital WD Green SN350 NVMe 1TB, Upto 3200MB/s, 3 Y Warranty, PCIe Gen 3 NVMe M.2 (2280), Internal Solid State Drive (SSD) (WDS100T3G0C)");
     }
 }
