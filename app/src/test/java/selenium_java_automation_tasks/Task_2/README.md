@@ -1,13 +1,12 @@
 # Selenium Java Automation Tasks
 
-# Task 01 Description:  List Product Titles
-
-# Automation Test Steps:
+# Task 02 Description: product search using contains()
+# Task Steps
 - Go to "https://www.amazon.in/".
 
-- Search for mobiles in the search Box.
+- Search for iphone in the search Box.
 
-- Display First 5 Mobile Product Titles in the search results page.
+- Display iPhone products which contains 128GB in the search results page.
 
 # Note on This Selenium Java Automation Task
 1. Added TestNG
