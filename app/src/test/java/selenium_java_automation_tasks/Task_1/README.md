@@ -1,9 +1,6 @@
 # Selenium Java Automation Tasks
 
-# Description:
-This repository is created to upload Selenium Automation Tasks using Java.
-
-# Task 01 Description:
+# Task 01 Description:  List Product Titles
 - Go to "https://www.amazon.in/".
 
 - Search for mobiles in the search Box.
