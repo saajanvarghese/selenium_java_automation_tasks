@@ -1,4 +1,4 @@
-package selenium_java_automation_tasks;
+package selenium_java_automation_tasks.Task_3;
 
 import java.time.Duration;
 import java.util.List;

@@ -1,4 +1,4 @@
-package selenium_java_automation_tasks;
+package selenium_java_automation_tasks.Task_2;
 
 import java.util.List;
 import java.time.Duration;
@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Task_1 {
+public class Task_2 {
     WebDriver driver;
 
-    public Task_1(WebDriver driver) {
+    public Task_2(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -53,7 +53,6 @@ public class Task_1 {
 
             Assert.assertTrue(verifyAmazonResultPage.isDisplayed(),
                     "Failed: Searched Keyword is not present in Amazon result page");
-
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
@@ -61,20 +60,26 @@ public class Task_1 {
     }
 
     @Test
-    public void listProductTitles() throws InterruptedException {
+    public void product_search_using_contains() throws InterruptedException {
 
         try {
             List<WebElement> list = driver
                     .findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
 
-            for (int i = 0; i < 5 && i < list.size(); i++) { // to print first 5 Product Titles
-                String listitem = list.get(i).getText();
-                Assert.assertFalse(listitem.isEmpty(), "Product title is empty");
-                System.out.println("Product Title :" + listitem);
+            int count = 0;
+
+            for (int i = 0; i < list.size(); i++) {
+
+                String item_name = list.get(i).getText();
+                if (item_name.contains("128")) {
+                    count++;
+                    Assert.assertFalse(item_name.isEmpty(), "Product title is empty");
+                    System.out.println(item_name);
+                }
             }
+            System.out.println("Total Count : " + count);
         } catch (Exception e) {
             // TODO: handle exception
-            e.printStackTrace();
         }
     }
 }

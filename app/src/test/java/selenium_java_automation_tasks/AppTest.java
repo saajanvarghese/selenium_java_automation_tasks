@@ -7,6 +7,15 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import selenium_java_automation_tasks.Task_1.Task_1;
+import selenium_java_automation_tasks.Task_2.Task_2;
+import selenium_java_automation_tasks.Task_3.Task_3;
+import selenium_java_automation_tasks.Task_4.Task_4;
+import selenium_java_automation_tasks.Task_5.Task_5;
+import selenium_java_automation_tasks.Task_6.Task_6;
+import selenium_java_automation_tasks.Task_7.Task_7;
+import selenium_java_automation_tasks.Task_8.Task_8;
+
 class AppTest {
     static WebDriver driver;
 
@@ -23,7 +32,7 @@ class AppTest {
         driver.quit();
     }
 
-   // @Test
+    @Test
     public static void Task_1_List_ProductTitles() throws InterruptedException {
 
         Task_1 task_1 = new Task_1(driver);
@@ -115,7 +124,7 @@ class AppTest {
         task_7.CalculateTotalAmount();
     }
 
-    @Test
+    //@Test
     public static void Task_8_Check_RAM_SSD_in_Google_and_Amazon(){
 
         Task_8 task_8 = new Task_8(driver);
@@ -128,4 +137,5 @@ class AppTest {
 
         task_8.searchinAmazon("Crucial CT16G4SFD824A 16GB 2400MHz 260-Pin SODIMM Laptop Memory (CT16G4SFD824A)","Western Digital WD Green SN350 NVMe 1TB, Upto 3200MB/s, 3 Y Warranty, PCIe Gen 3 NVMe M.2 (2280), Internal Solid State Drive (SSD) (WDS100T3G0C)");
     }
+
 }
