@@ -31,7 +31,7 @@ public class Task_4 {
         return false;
     }
 
-    @Test
+    @Test(enabled = true)
     public void printWeekendsofthemonth() {
 
         try {
@@ -76,7 +76,7 @@ public class Task_4 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void selectCurrentDate() {
 
         try {
