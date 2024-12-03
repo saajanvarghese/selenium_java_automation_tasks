@@ -31,7 +31,7 @@ public class Task_6 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public Boolean searchProduct(String productName) {
         try {
 
@@ -65,7 +65,7 @@ public class Task_6 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public int countProducts() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -86,7 +86,7 @@ public class Task_6 {
         return 0; // if productCount is 0.
     }
 
-    @Test
+    @Test(enabled = true)
     public void SortBy(String sort) {
         List<WebElement> SortBy = driver.findElements(By.xpath("//div[@class='zg-M3Z']"));
 
@@ -99,7 +99,7 @@ public class Task_6 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void addProductToCart() {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -134,7 +134,7 @@ public class Task_6 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void calculateProductAmount() {
 
         try {

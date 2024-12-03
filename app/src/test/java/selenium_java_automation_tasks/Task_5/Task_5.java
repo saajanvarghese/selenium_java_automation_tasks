@@ -28,7 +28,7 @@ public class Task_5 {
         return false;
     }
 
-    @Test
+    @Test(enabled = true)
     public void printFoundersList() {
 
         try {
