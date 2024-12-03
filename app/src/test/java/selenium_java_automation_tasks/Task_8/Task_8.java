@@ -50,7 +50,7 @@ public class Task_8 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void searchCrucialRAM_in_Google(String productName) {
 
         try {
@@ -127,7 +127,7 @@ public class Task_8 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void search_Western_Digital_SSD_Drive_in_Google(String productName) {
         try {
             // Cast the WebDriver to JavascriptExecutor
@@ -187,7 +187,7 @@ public class Task_8 {
 
     }
 
-    @Test
+    @Test(enabled = true)
     public void searchinAmazon(String RAM, String SSD) {
         try {
             // Cast the WebDriver to JavascriptExecutor
