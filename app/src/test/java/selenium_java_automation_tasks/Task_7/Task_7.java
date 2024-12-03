@@ -28,7 +28,7 @@ public class Task_7 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void searchProduct(String productName) {
 
         try {
@@ -133,7 +133,7 @@ public class Task_7 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public Boolean CalculateTotalAmount() {
         try {
             WebElement ProceedToCheckout = driver.findElement(By.xpath("//a[@id='nav-cart']"));
