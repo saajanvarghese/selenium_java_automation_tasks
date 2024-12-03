@@ -28,7 +28,7 @@ public class Task_3 {
         return false;
     }
 
-    @Test
+    @Test(enabled = true)
     public void printGoogleNewsIndia() {
 
         try {
@@ -65,7 +65,7 @@ public class Task_3 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void printGoogleNewsWorld() {
 
         try {
@@ -105,6 +105,7 @@ public class Task_3 {
             }
         } catch (Exception e) {
             // TODO: handle exception
+            e.printStackTrace();
         }
     }
 }
