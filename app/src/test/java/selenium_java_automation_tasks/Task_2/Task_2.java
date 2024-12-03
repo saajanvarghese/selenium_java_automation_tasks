@@ -28,7 +28,7 @@ public class Task_2 {
         return false;
     }
 
-    @Test
+    @Test(enabled = true)
     public void amazonSearch(String product) {
 
         try {
@@ -59,7 +59,7 @@ public class Task_2 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void product_search_using_contains() throws InterruptedException {
 
         try {
