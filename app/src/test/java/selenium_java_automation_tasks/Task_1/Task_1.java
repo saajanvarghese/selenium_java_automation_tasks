@@ -28,7 +28,7 @@ public class Task_1 {
         return false;
     }
 
-    @Test
+    @Test(enabled = true)
     public void amazonSearch(String product) {
 
         try {
@@ -60,7 +60,7 @@ public class Task_1 {
         }
     }
 
-    @Test
+    @Test(enabled = true)
     public void listProductTitles() throws InterruptedException {
 
         try {
