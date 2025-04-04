@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -55,12 +54,7 @@ public class Task_8 {
 
         try {
             WebElement googleSearchtxtBox = driver.findElement(By.xpath("//textarea[@class='gLFyf']"));
-            googleSearchtxtBox.click();
-
-            googleSearchtxtBox.clear();
-            googleSearchtxtBox.sendKeys(productName);
-
-            googleSearchtxtBox.sendKeys(Keys.RETURN);
+            SeleniumWrapper.enterText(googleSearchtxtBox, productName);
 
             WebElement search_result_click = driver.findElement(By.xpath("(//h3[@class='LC20lb MBeuO DKV0Md'])[2]"));
             search_result_click.click();
@@ -145,12 +139,7 @@ public class Task_8 {
             driver.get("https://www.google.com");
 
             WebElement googleSearchtxtBox = driver.findElement(By.xpath("//textarea[@class='gLFyf']"));
-            googleSearchtxtBox.click();
-
-            googleSearchtxtBox.clear();
-            googleSearchtxtBox.sendKeys(productName);
-
-            googleSearchtxtBox.sendKeys(Keys.RETURN);
+            SeleniumWrapper.enterText(googleSearchtxtBox, productName);
 
             WebElement google_search_results_click = driver
                     .findElement(By.xpath("(//a[@jsname='UWckNb'])[2]"));
@@ -208,10 +197,7 @@ public class Task_8 {
             System.out.println("******************CHECK FOR CRUCIAL RAM IN AMAZON***************************");
 
             WebElement amazonSearchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-            amazonSearchBox.click();
-
-            amazonSearchBox.sendKeys(RAM);
-            amazonSearchBox.sendKeys(Keys.RETURN);
+            SeleniumWrapper.enterText(amazonSearchBox, SSD);
 
             List<WebElement> amazonSearchList = driver
                     .findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
@@ -281,9 +267,7 @@ public class Task_8 {
             System.out.println("******************CHECK FOR WD GREEN SSD IN AMAZON***************************");
 
             WebElement amazonSearchBox2 = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-            amazonSearchBox2.sendKeys(SSD);
-
-            amazonSearchBox2.sendKeys(Keys.RETURN);
+           SeleniumWrapper.enterText(amazonSearchBox2, SSD);
 
             List<WebElement> amazonSearchList2 = driver
             .findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));

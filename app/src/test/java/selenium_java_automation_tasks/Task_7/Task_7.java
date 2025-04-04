@@ -32,13 +32,9 @@ public class Task_7 {
     public void searchProduct(String productName) {
 
         try {
-            WebElement searchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
-            searchBox.click();
-            searchBox.clear();
-            searchBox.sendKeys(productName);
 
-            WebElement searchBtn = driver.findElement(By.id("nav-search-submit-button"));
-            searchBtn.click();
+            WebElement searchBox = driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']"));
+            SeleniumWrapper.enterText(searchBox, productName);
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(

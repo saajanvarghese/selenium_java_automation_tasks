@@ -39,11 +39,7 @@ public class Task_6 {
             searchBoxwait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@name='q']")));
 
             WebElement searchBoxClick = driver.findElement(By.xpath("//input[@name='q']"));
-            searchBoxClick.click();
-
-            searchBoxClick.clear();
-
-            searchBoxClick.sendKeys(productName);
+            SeleniumWrapper.enterText(searchBoxClick, productName);
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='_2iLD__']")));

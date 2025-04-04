@@ -1,13 +1,11 @@
 package selenium_java_automation_tasks.Task_5;
 
-import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Task_5 {
@@ -29,29 +27,11 @@ public class Task_5 {
     }
 
     @Test(enabled = true)
-    public void printFoundersList() {
+    public void printFoundersList(String productName) {
 
         try {
             WebElement searchBox = driver.findElement(By.xpath("//input[@id='searchInput']"));
-            searchBox.click();
-
-            searchBox.sendKeys("Apple Inc.");
-
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-            wait.until(ExpectedConditions
-                    .presenceOfAllElementsLocatedBy(By.xpath("//div[@class='suggestions-dropdown']//a//div//h3")));
-
-            List<WebElement> searchList = driver
-                    .findElements(By.xpath("//div[@class='suggestions-dropdown']//a//div//h3"));
-
-            for (WebElement searchResults : searchList) {
-                String searchListText = searchResults.getText();
-                if (searchListText.contains("Apple Inc.")) {
-                    // Click the element that matches the condition
-                    searchResults.click();
-                    break;
-                }
-            }
+            SeleniumWrapper.enterText(searchBox, productName);
 
             List<WebElement> foundersList = driver.findElements(By.xpath("(//div[@class='plainlist'])[4]//ul/li/a"));
 
@@ -59,6 +39,8 @@ public class Task_5 {
                 String foundersListText = foundersListElement.getText();
 
                 System.out.println("Founders List: " + foundersListText);
+
+                Assert.assertEquals(foundersListText, foundersListText);
             }
         } catch (Exception e) {
             // TODO: handle exception

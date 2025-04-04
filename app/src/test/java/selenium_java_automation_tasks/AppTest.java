@@ -86,7 +86,7 @@ class AppTest {
 
         task_5.navigateToWikipediaPage();
 
-        task_5.printFoundersList();
+        task_5.printFoundersList("Apple Inc.");
     }
 
    // @Test(enabled = true)
