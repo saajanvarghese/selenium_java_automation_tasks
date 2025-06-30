@@ -18,15 +18,15 @@ repositories {
 
 dependencies {
 // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
-implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.9.2'
+implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '6.1.0'
 
 
 // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
-implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.25.0'
+implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.33.0'
 
 
 // https://mvnrepository.com/artifact/org.testng/testng
-testImplementation group: 'org.testng', name: 'testng', version: '7.10.2'
+testImplementation group: 'org.testng', name: 'testng', version: '7.11.0'
 
 
 }
