@@ -15,6 +15,7 @@ import selenium_java_automation_tasks.Task_5.Task_5;
 import selenium_java_automation_tasks.Task_6.Task_6;
 import selenium_java_automation_tasks.Task_7.Task_7;
 import selenium_java_automation_tasks.Task_8.Task_8;
+import selenium_java_automation_tasks.Task_9.Task_9;
 
 class AppTest {
     static WebDriver driver;
@@ -136,6 +137,16 @@ class AppTest {
         task_8.search_Western_Digital_SSD_Drive_in_Google("1TB QLC WD Green SN350 NVMe™ SSD");
 
         task_8.searchinAmazon("Crucial CT16G4SFD824A 16GB 2400MHz 260-Pin SODIMM Laptop Memory (CT16G4SFD824A)","Western Digital WD Green SN350 NVMe 1TB, Upto 3200MB/s, 3 Y Warranty, PCIe Gen 3 NVMe M.2 (2280), Internal Solid State Drive (SSD) (WDS100T3G0C)");
+    }
+
+    @Test(enabled = true)
+    public static void Task_9_PrintPlayers_of_Sixers_In_A_Cricket_Match(){
+
+        Task_9 task_9 = new Task_9(driver);
+
+        task_9.navigateToLink();
+
+        task_9.printPlayersofSixersInCricketMatch();        
     }
 
 }
