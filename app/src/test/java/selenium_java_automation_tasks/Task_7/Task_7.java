@@ -123,9 +123,11 @@ public class Task_7 {
             } catch (Exception e) {
                 // TODO: handle exception
                 e.printStackTrace();
+        Assert.fail("Test failed due to exception: " + e.getMessage());
             }
         } catch (Exception e) {
             e.printStackTrace();
+        Assert.fail("Test failed due to exception: " + e.getMessage());
         }
     }
 
@@ -200,6 +202,8 @@ public class Task_7 {
             int cartTotalAmount = Integer.parseInt(totalAmounString);
 
             Assert.assertEquals(totalAmount, cartTotalAmount);
+
+            driver.quit();
 
             return true;
 

@@ -57,6 +57,7 @@ public class Task_1 {
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+        Assert.fail("Test failed due to exception: " + e.getMessage());
         }
     }
 
@@ -72,6 +73,8 @@ public class Task_1 {
                 Assert.assertFalse(listitem.isEmpty(), "Product title is empty");
                 System.out.println("Product Title :" + listitem);
             }
+
+            driver.quit();
         } catch (Exception e) {
             // TODO: handle exception
            e.printStackTrace();

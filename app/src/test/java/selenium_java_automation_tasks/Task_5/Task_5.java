@@ -42,6 +42,7 @@ public class Task_5 {
 
                 Assert.assertEquals(foundersListText, foundersListText);
             }
+            driver.quit();
         } catch (Exception e) {
             // TODO: handle exception
            e.printStackTrace();

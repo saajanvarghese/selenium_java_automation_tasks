@@ -56,6 +56,7 @@ public class Task_2 {
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+        Assert.fail("Test failed due to exception: " + e.getMessage());
         }
     }
 
@@ -78,6 +79,8 @@ public class Task_2 {
                 }
             }
             System.out.println("Total Count : " + count);
+
+            driver.quit();
         } catch (Exception e) {
            e.printStackTrace();
         Assert.fail("Test failed due to exception: " + e.getMessage());

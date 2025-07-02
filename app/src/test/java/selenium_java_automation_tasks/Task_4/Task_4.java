@@ -73,6 +73,7 @@ public class Task_4 {
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+        Assert.fail("Test failed due to exception: " + e.getMessage());
         }
     }
 
@@ -122,6 +123,8 @@ public class Task_4 {
             System.out.println("Date: " + day + " " + month + " " + year);
 
             driver.switchTo().defaultContent();
+
+            driver.quit();
         } catch (Exception e) {
             // TODO: handle exception
 e.printStackTrace();

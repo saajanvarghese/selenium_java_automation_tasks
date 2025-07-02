@@ -127,6 +127,7 @@ public class Task_6 {
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+        Assert.fail("Test failed due to exception: " + e.getMessage());
         }
     }
 
@@ -172,6 +173,8 @@ public class Task_6 {
             Assert.assertEquals(result, totalAmt);
 
             System.out.println("Total Amount: " + totalAmt);
+
+            driver.quit();
 
         } catch (Exception e) {
             // TODO: handle exception
