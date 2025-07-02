@@ -206,6 +206,7 @@ public class Task_7 {
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+        Assert.fail("Test failed due to exception: " + e.getMessage());
             return false;
         }
     }

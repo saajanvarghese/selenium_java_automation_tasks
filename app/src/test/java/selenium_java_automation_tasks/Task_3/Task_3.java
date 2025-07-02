@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Task_3 {
@@ -106,6 +107,7 @@ public class Task_3 {
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+        Assert.fail("Test failed due to exception: " + e.getMessage());
         }
     }
 }
