@@ -16,7 +16,7 @@
 
 ## Required Software to Install:
 ```
-# java version 17
+# java version  17.0.12
 java --version
 ```
 ```
@@ -24,11 +24,11 @@ java --version
 git --version
 ```
 ```
-# gradle version 8.6
+# gradle version 8.11
 gradle --version
 ```
 ```
-# vscode 1.95.3
+# vscode 1.101.2
 code --version
 ```
 ## Required Dependency to run:
